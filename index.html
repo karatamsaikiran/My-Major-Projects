@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow - Modern Project Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-animation">
+      <div class="bg-circle"></div>
+      <div class="bg-circle"></div>
+      <div class="bg-circle"></div>
+    </div>
+
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">TaskFlow</div>
+        <ul class="nav-links">
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#tasks">Tasks</a></li>
+          <li><a href="#analytics">Analytics</a></li>
+          <li><a href="#settings">Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Welcome to TaskFlow</h1>
+        <p>
+          Streamline your productivity with our modern task management system
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" onclick="openModal()">
+            <span>🚀</span> Get Started
+          </button>
+          <a href="#dashboard" class="btn btn-secondary">
+            <span>📊</span> View Dashboard
+          </a>
+        </div>
+      </section>
+
+      <section id="dashboard" class="dashboard">
+        <div class="card">
+          <h3>📋 Quick Stats</h3>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number" id="totalTasks">0</span>
+              <span class="stat-label">Total Tasks</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" id="completedTasks">0</span>
+              <span class="stat-label">Completed</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" id="pendingTasks">0</span>
+              <span class="stat-label">Pending</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" id="productivity">0%</span>
+              <span class="stat-label">Productivity</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>✅ Task Manager</h3>
+          <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Add a new task..." />
+            <button class="btn btn-primary" onclick="addTask()">Add</button>
+          </div>
+          <div class="task-list" id="taskList">
+            <!-- Tasks will be dynamically added here -->
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>📈 Progress Overview</h3>
+          <p>Overall Completion</p>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+          </div>
+          <p
+            style="
+              color: var(--text-secondary);
+              font-size: 0.9rem;
+              margin-top: 1rem;
+            "
+          >
+            Keep up the great work! You're making excellent progress.
+          </p>
+          <div style="margin-top: 1rem">
+            <button class="btn btn-secondary" onclick="generateReport()">
+              📊 Generate Report
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">&times;</button>
+        <h2>Welcome to TaskFlow!</h2>
+        <p>
+          This is a modern web application built with HTML, CSS, and JavaScript.
+          Here's what you can do:
+        </p>
+        <ul style="margin: 1rem 0; color: var(--text-secondary)">
+          <li>Add and manage tasks</li>
+          <li>Track your productivity</li>
+          <li>View real-time statistics</li>
+          <li>Generate progress reports</li>
+        </ul>
+        <button class="btn btn-primary" onclick="closeModal()">
+          Get Started
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
